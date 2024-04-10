@@ -5,7 +5,7 @@ import org.apache.poi.EncryptedDocumentException;
 import ExcelLibrary.FetchData;
 import utilitymethods.ActionsMethods;
 
-public class TestScript_01 extends FetchData {
+public class TestScript_01_Test extends FetchData {
 	public static ActionsMethods am = new ActionsMethods();
 
 	public static void main(String[] args) throws EncryptedDocumentException, IOException {
