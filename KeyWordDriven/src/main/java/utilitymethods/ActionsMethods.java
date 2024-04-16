@@ -33,6 +33,10 @@ public class ActionsMethods {
 	public void click(String locators) throws EncryptedDocumentException, IOException {
 		driver.findElement(By.xpath(locators)).click();
 	}
+	public void back() throws EncryptedDocumentException, IOException {
+		driver.navigate().back();
+	}
+	
 	
 
 }

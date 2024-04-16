@@ -36,7 +36,7 @@ public class TestScript_02_Test extends FetchData {
 			case "send keys": {
                 am.send_data(locators(i), values(i));
 			}
-				break;
+				break;	
 		
 
 			case "close browser": {

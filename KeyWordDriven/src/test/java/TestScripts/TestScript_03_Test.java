@@ -5,48 +5,50 @@ import org.apache.poi.EncryptedDocumentException;
 import ExcelLibrary.FetchData;
 import utilitymethods.ActionsMethods;
 
-public class TestScript_01_Test extends FetchData {
+public class TestScript_03_Test extends FetchData {
 	public static ActionsMethods am = new ActionsMethods();
 
-	public static void main(String[] args) throws EncryptedDocumentException, IOException {
-		for (int i = 1; i < rowCount(); i++) {
+	public static void main(String[] args) throws EncryptedDocumentException, IOException, InterruptedException {
+		for (int i = 1; i <rowCount(); i++) {
+			System.out.println(rowCount());
 
 			switch (actions(i)) {
 			case "open browser": {
-//				driver = new ChromeDriver();
 				am.open_browser();
 			}
 				break;
 
 			case "maximize browser": {
-//				driver.manage().window().maximize();
 				am.maximize_browser();
 			}
 				break;
 
 			case "launch url": {
-//				driver.get(values(3));
 				am.navigate_to_app(values(i));
-			}
-				break;
-
-			case "search": {
-				am.locating_ele(locators(i));
-			}
-				break;
-
-			case "send keys": {
-                am.send_data(locators(i), values(i));
 			}
 				break;
 				
 			case "click": {
+				Thread.sleep(2000);
                 am.click(locators(i));
 			}
 				break;
 
+
+			case "send keys": {
+				Thread.sleep(1000);
+                am.send_data(locators(i), values(i));
+			}
+				break;	
+				
+			case "back": {
+				Thread.sleep(2000);
+                am.back();
+			}
+				break;	
+		
 			case "close browser": {
-//				driver.quit();
+				Thread.sleep(2000);
 				am.close_browser();
 			}
 				break;
